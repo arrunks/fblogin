@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #A3C3EA url(../images/Layer47-min.jpg) no-repeat fixed center;
+   overflow-x: hidden;
+    background-size: 100%;
+}
+
+a {
+  color: #00B7FF;
+}
+			.wrapper{
+				width:70%;
+				height:500px;
+				display:block;
+				margin:0 auto;
+				background:#fff;
+				padding:25px;
+			}
+			.getPictureButton{
+				padding:10px 20px;
+				display:block;
+				margin:0 auto;
+				color: #fff;
+    			background: #1f92c3;
+   				 border: none;
+			}
+			.imageContainer{
+				width:200px;
+				border:1px solid black;
+				height:200px;
+				margin: 20px auto;
+			}
+			.imageContainer img{
+				width:100%;
+			}
+			.fbButtonContainer{
+			    width: 300px;
+    			display: block;
+    			margin: 0 auto;
+			}

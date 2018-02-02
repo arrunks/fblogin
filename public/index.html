@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<title>FB PROFILE</title>
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+</head>
+<body >
+<div ng-app="app">
+<div class="" ng-controller="fbController">
+		<div class="container wrapper">
+				<div class="fbButtonContainer" ng-if="!fbuser.id">
+					<fb:login-button show-faces="true" max-rows="1"
+					  size="large"></fb:login-button>
+					</div>
+					<button class="getPictureButton" ng-if="fbuser.id" ng-click="checkLoginState()">Get Profile Picture</button>
+					<div class="imageContainer" ng-if="fbuser.id && fb.profilePictureUrl">
+						<img title="fb-profile-pic" src="{{fb.profilePictureUrl}}"  />
+					
+					</div>
+					
+		</div>
+</div>
+</div>
+<script src='javascripts/angular.min.js'></script>
+<script src='javascripts/fbAuthService.js'></script>
+<script src='javascripts/app.js'></script>
+<script src='javascripts/fbController.js'></script>
+ <div id="fb-root"></div>
+</body>
+</html>
