@@ -5,8 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var index = require('./routes/index');
-var users = require('./routes/users');
+var upload = require('./routes/upload');
 
 var app = express();
 
@@ -15,9 +16,8 @@ var app = express();
 app.set('view engine', 'pug');*/
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
-//app.engine('html', require('ejs').renderFile);
-//app.set('view engine', 'html');
-
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -26,11 +26,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/',function(req,res){
-	res.sendFile('index.html');
-})
+
 app.use('/', index);
-app.use('/users', users);
+app.use('/upload', upload);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -43,6 +41,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
+	console.log(err.message);
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page

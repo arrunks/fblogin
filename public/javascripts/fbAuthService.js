@@ -33,7 +33,7 @@
 		    	  });
 
 		    	}
-		    
+
 		    this.getFbUserInfo = function() {
 		    	  var _self = this;
 
@@ -46,9 +46,9 @@
 		    	}
 		    this.getProfilePictureFB = function() {
 	            var deferred = $q.defer();
-	            
-	            	
-	            	
+
+
+
 	            FB.api('/me/picture', 'GET',{
 	            	width: '480',
 	            	height:'480'

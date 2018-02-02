@@ -8,16 +8,16 @@
 <div ng-app="app">
 <div class="" ng-controller="fbController">
 		<div class="container wrapper">
-				<div class="fbButtonContainer" ng-if="!fbuser.id">
+				<!-- <div class="fbButtonContainer" ng-if="!fbuser.id">
 					<fb:login-button show-faces="true" max-rows="1"
 					  size="large"></fb:login-button>
-					</div>
-					<button class="getPictureButton" ng-if="fbuser.id" ng-click="checkLoginState()">Get Profile Picture</button>
+					</div> -->
+					<button class="getPictureButton" ng-click="getProfilePicture()">Get Profile Picture</button>
 					<div class="imageContainer" ng-if="fbuser.id && fb.profilePictureUrl">
 						<img title="fb-profile-pic" src="{{fb.profilePictureUrl}}"  />
-					
+
 					</div>
-					
+
 		</div>
 </div>
 </div>
