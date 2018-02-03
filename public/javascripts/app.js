@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngRoute']);
 
 app.constant('isMobile', isMobileDevice()); //window.screen.width
 app.constant('isTablet', window.innerWidth >= 760 && window.innerWidth <= 1024); //window.screen.width
@@ -99,27 +99,21 @@ app.run([
     }
 ]);
 
-/*app.config([
-    '$routeProvider',
-    '$locationProvider',
-    '$controllerProvider',
-    '$compileProvider',
-    '$filterProvider',
-    '$provide',
-    'isMobile',
-    'isTablet',
-    function($routeProvider, $locationProvider, $controllerProvider, $compileProvider, $filterProvider, $provide,isMobile, isTablet) {
-    	app.controller = $controllerProvider.register;
-        app.directive  = $compileProvider.directive;
-        app.filter     = $filterProvider.register;
-        app.factory    = $provide.factory;
-        app.service    = $provide.service;
-        $locationProvider.html5Mode(true);
+app.config([
+    '$routeProvider','$locationProvider',
+    function($routeProvider,$locationProvider) {
+      $routeProvider
+      .when("/", {
+        templateUrl : "../templates/index.html"
+      })
+      .when("/:leadId", {
+        templateUrl : "../templates/index.html"
+      });
         //$locationProvider.hashPrefix('!');
-
+         $locationProvider.html5Mode(true);
 
 
     }
-]);*/
+]);
 
 app.service('FbAuthService',FbAuthService);
